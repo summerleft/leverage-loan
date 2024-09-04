@@ -1,0 +1,10 @@
+{
+  "name": "leverage-loan",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/summerleft/leverage-loan.git",
+  "license": "MIT",
+  "devDependencies": {
+    "hardhat": "^2.22.10"
+  }
+}
