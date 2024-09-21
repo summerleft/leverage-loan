@@ -1,5 +1,12 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import * as dotenv from 'dotenv'
+
+import { ProxyAgent, setGlobalDispatcher } from "undici";
+const proxyAgent = new ProxyAgent("http://127.0.0.1:7890");
+setGlobalDispatcher(proxyAgent);
+
+dotenv.config()
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -35,7 +42,7 @@ const config: HardhatUserConfig = {
   },
   networks: {
     sepolia: {
-      url: process.env.PRC_URL,
+      url: process.env.RPC_URL,
       accounts: [process.env.PRIVATE_KEY || ''],
       timeout: 60000
     }
